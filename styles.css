@@ -25,3 +25,14 @@ body {
     gap: 20px;
     margin: 20px 0;
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
