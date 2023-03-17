@@ -23,6 +23,11 @@ function divide(firstnum, currentnum) {
     }
 }
 
+function percentage(firstnum) {
+    let result = firstnum / 100;
+    return result;
+}
+
 function operate(operation) {
     switch (operation) {
         case "addition":
@@ -37,7 +42,10 @@ function operate(operation) {
         case "division":
             divide;
             break;
+        case "percentage":
+            percentage;
+            break;
     }
 }
 
-console.log(divide(10,1));
+console.log(percentage(10, 10));
