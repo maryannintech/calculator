@@ -47,5 +47,3 @@ function operate(operation) {
             break;
     }
 }
-
-console.log(percentage(10, 10));
