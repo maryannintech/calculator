@@ -23,4 +23,21 @@ function divide(firstnum, currentnum) {
     }
 }
 
+function operate(operation) {
+    switch (operation) {
+        case "addition":
+            add;
+            break;
+        case "subtraction":
+            subtract;
+            break;
+        case "multiplication":
+            multiply;
+            break;
+        case "division":
+            divide;
+            break;
+    }
+}
+
 console.log(divide(10,1));
