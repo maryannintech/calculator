@@ -46,6 +46,10 @@ body {
     background-color: #dde5b6;
 }
 
+.op {
+    background-color: #adc178;
+}
+
 button {
     margin: 0;
     font-family: 'Poppins', sans-serif;
