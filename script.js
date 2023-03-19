@@ -4,20 +4,20 @@ let operation = "";
 
 let solutionScreen = document.querySelector(".solution");
 let answerScreen = document.querySelector(".answer");
-const onebtn = document.querySelector(".one").addEventListener("click", () => {displayNum(1);});
-const twobtn = document.querySelector(".two").addEventListener("click", () => {displayNum(2);});
-const threebtn = document.querySelector(".three").addEventListener("click", () => {displayNum(3);});
-const fourbtn = document.querySelector(".four").addEventListener("click", () => {displayNum(4);});
-const fivebtn = document.querySelector(".five").addEventListener("click", () => {displayNum(5);});
-const sixbtn = document.querySelector(".six").addEventListener("click", () => {displayNum(6);});
-const sevenbtn = document.querySelector(".seven").addEventListener("click", () => {displayNum(7);});
-const eigthbtn = document.querySelector(".eight").addEventListener("click", () => {displayNum(8);});
-const ninebtn = document.querySelector(".nine").addEventListener("click", () => {displayNum(9);});
-const zerobtn = document.querySelector(".zero").addEventListener("click", () => {displayNum(0);});
-const pointbtn = document.querySelector(".point").addEventListener("click", () => {displayNum(".");});
-const posneg = document.querySelector(".posneg").addEventListener("click", () => {})
+const onebtn = document.querySelector(".one").addEventListener("click", () => {chooseBtn(1);});
+const twobtn = document.querySelector(".two").addEventListener("click", () => {chooseBtn(2);});
+const threebtn = document.querySelector(".three").addEventListener("click", () => {chooseBtn(3);});
+const fourbtn = document.querySelector(".four").addEventListener("click", () => {chooseBtn(4);});
+const fivebtn = document.querySelector(".five").addEventListener("click", () => {chooseBtn(5);});
+const sixbtn = document.querySelector(".six").addEventListener("click", () => {chooseBtn(6);});
+const sevenbtn = document.querySelector(".seven").addEventListener("click", () => {chooseBtn(7);});
+const eigthbtn = document.querySelector(".eight").addEventListener("click", () => {chooseBtn(8);});
+const ninebtn = document.querySelector(".nine").addEventListener("click", () => {chooseBtn(9);});
+const zerobtn = document.querySelector(".zero").addEventListener("click", () => {chooseBtn(0);});
+const pointbtn = document.querySelector(".point").addEventListener("click", () => {chooseBtn(".");});
+const posneg = document.querySelector(".posneg").addEventListener("click", () => {chooseBtn("+/-");});
 
-function displayNum(number) {
+function chooseBtn(number) {
     switch(number){
         case 1:
             displayTextContent("1");
@@ -48,33 +48,35 @@ function displayNum(number) {
             break;
         case 0:
             displayTextContent("0");
+        case "+/-":
+            displayTextContent("-");
     }
 }
 
 function add() {
     operation = "addition";
-    solutionScreen.textContent = "+";
+    solutionScreen.textContent += "+";
 };
 
 function subtract() {
     operation = "subtraction";
-    solutionScreen.textContent = "-";
+    solutionScreen.textContent += "-";
 };
 
 function multiply() {
     operation = "multiplication";
-    solutionScreen.textContent = "x";
+    solutionScreen.textContent += "x";
 };
 
 function divide() {
     operation = "division";
-    solutionScreen.textContent = "÷";
+    solutionScreen.textContent += "÷";
     
 };
 
 function percentage() {
     operation = "percentage";
-    solutionScreen.textContent = "%";
+    solutionScreen.textContent += "%";
 };
 
 function operate() {
@@ -83,6 +85,7 @@ function operate() {
     let answer;
     if (operation === "addition") {
         answer = x + y;
+
     }
     else if (operation === "subtraction") {
         answer = x - y;
@@ -102,16 +105,17 @@ function operate() {
         answerScreen.textContent = firstnum / 100;
     }
 
-    answerScreen.textContent = toString(answer);
-};
-
-function clear() {
-    window.location.reload();
 };
 
 function displayTextContent(content) {
     solutionScreen.textContent += content;
 }
+
+function clear() {
+    solutionScreen.textContent = null;
+    answerScreen.textContent = null;
+    
+};
 
 const percentbtn = document.querySelector(".percentage").addEventListener("click", percentage);
 const dividebtn = document.querySelector(".divide").addEventListener("click", divide);
