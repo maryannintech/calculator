@@ -5,7 +5,7 @@ let operation = "";
 let solutionScreen = document.querySelector(".solution");
 let answerScreen = document.querySelector(".answer");
 
-const numberBtns = document.querySelectorAll('[data-number]');
+const numberBtns = document.querySelectorAll('[num]');
 
 function add() {
     operation = "addition";
@@ -34,27 +34,31 @@ function percentage() {
 }
 
 function operate() {
+    let x = parseFloat(firstnum);
+    let y = parseFloat(secondnum);
+    let answer;
     if (operation === "addition") {
-        answerScreen.textContent = firstnum + secondnum;
-        
+        answer = x + y;
     }
     else if (operation === "subtraction") {
-        answerScreen.textContent = firstnum - secondnum;
+        answer = x - y;
     }
     else if (operation === "multiplication") {
-        answerScreen.textContent = firstnum * secondnum;
+        answer = x * y;
     }
     else if (operation === "division") {
-        if (firstnum === 0 || secondnum === 0) {
+        if (x === 0 || y === 0) {
             answerScreen.textContent = "Cannot be divide by 0";
         }
         else {
-            answerScreen = firstnum / secondnum;
+            answer = x / y;
         }
     }
     else if (operation === "percentage") {
         answerScreen.textContent = firstnum / 100;
     }
+
+    answerScreen.textContent = toString(answer);
 }
 
 function clear() {
