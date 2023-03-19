@@ -1,20 +1,28 @@
+let firstnum = "";
+let currentnum = "";
+let solutionscreen = document.querySelector(".solution");
+let answerscreen = document.querySelector(".answer");
 
 function add(firstnum, currentnum) {
+    solutionscreen.innerText = "+";
     let sum = firstnum + currentnum;
     return sum;
 }
 
 function subtract(firstnum, currentnum) {
+    solutionscreen.innerText = "-";
     let difference = firstnum - currentnum;
     return difference;
 }
 
 function multiply(firstnum, currentnum) {
+    solutionscreen.innerText = "x";
     let product = firstnum * currentnum;
     return product;
 }
 
 function divide(firstnum, currentnum) {
+    solutionscreen.innerText = "÷";
     if (firstnum === 0 || currentnum === 0) {
         console.log("Cannot be divide by 0");
     }
@@ -25,13 +33,11 @@ function divide(firstnum, currentnum) {
 }
 
 function percentage(firstnum) {
+    solutionscreen.innerText = "%";
     let result = firstnum / 100;
     return result;
 }
 
-function backspace() {
-
-}
 
 function operate(operation) {
     const percentbtn = document.querySelector(".percentage").addEventListener("click", () => {operate("percentage")});
