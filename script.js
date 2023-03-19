@@ -1,5 +1,6 @@
 let firstnum;
 let currentnum;
+
 let solutionscreen = document.querySelector(".solution");
 let answerscreen = document.querySelector(".answer");
 
@@ -54,13 +55,13 @@ function percentage(firstnum) {
     return result;
 }
 
+const percentbtn = document.querySelector(".percentage").addEventListener("click", () => {operate("percentage")});
+const dividebtn = document.querySelector(".divide").addEventListener("click", () => {operate("division")});
+const multiplybtn = document.querySelector(".multiply").addEventListener("click", () => {operate("multiplication")});
+const subtractbtn = document.querySelector(".subtract").addEventListener("click", () => {operate("subtraction")});
+const addbtn = document.querySelector(".add").addEventListener("click", () => {operate("addition")});
 
 function operate(operation) {
-    const percentbtn = document.querySelector(".percentage").addEventListener("click", () => {operate("percentage")});
-    const dividebtn = document.querySelector(".divide").addEventListener("click", () => {operate("division")});
-    const multiplybtn = document.querySelector(".multiply").addEventListener("click", () => {operate("multiplication")});
-    const subtractbtn = document.querySelector(".subtract").addEventListener("click", () => {operate("subtraction")});
-    const addbtn = document.querySelector(".add").addEventListener("click", () => {operate("addition")});
     switch (operation) {
         case "addition":
             add;
@@ -78,4 +79,9 @@ function operate(operation) {
             percentage;
             break;
     }
+}
+const clearbtn = document.querySelector(".clear").addEventListener("click", clear);
+
+function clear() {
+    window.location.reload();
 }
