@@ -84,14 +84,14 @@ function operate() {
     let y = parseFloat(secondnum);
     let answer;
     if (operation === "addition") {
-        answer = x + y;
+        answerScreen.textContent = x + y;
 
     }
     else if (operation === "subtraction") {
-        answer = x - y;
+        answerScreen.textContent = answer = x - y;
     }
     else if (operation === "multiplication") {
-        answer = x * y;
+        answerScreen.textContent = answer = x * y;
     }
     else if (operation === "division") {
         if (x === 0 || y === 0) {
@@ -114,7 +114,9 @@ function displayTextContent(content) {
 function clear() {
     solutionScreen.textContent = null;
     answerScreen.textContent = null;
-    
+    firstnum = "";
+    secondnum = "";
+    operation = "";
 };
 
 const percentbtn = document.querySelector(".percentage").addEventListener("click", percentage);
