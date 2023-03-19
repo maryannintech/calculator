@@ -5,12 +5,6 @@ let operation = "";
 let solutionScreen = document.querySelector(".solution");
 let answerScreen = document.querySelector(".answer");
 
-const numberBtns = document.querySelectorAll(".num");
-numberBtns.forEach(btn => {
-    btn.addEventListener("click", btnClicked);
-})
-
-
 function add() {
     operation = "addition";
     solutionScreen.textContent = "+";
@@ -33,7 +27,7 @@ function divide() {
 };
 
 function percentage() {
-    operate("percentage");
+    operation = "percentage";
     solutionScreen.textContent = "%";
 };
 
