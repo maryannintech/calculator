@@ -1,5 +1,6 @@
 let firstnum;
-let currentnum;
+let secondnum;
+let operation; 
 
 let solutionscreen = document.querySelector(".solution");
 let answerscreen = document.querySelector(".answer");
@@ -16,14 +17,19 @@ const ninebtn = document.querySelector(".nine").addEventListener("click", () => 
 const zerobtn = document.querySelector(".zero").addEventListener("click", () => {getnumber(0);});
 const pointbtn = document.querySelector(".point").addEventListener("click", () => {getnumber(".");});
 
-function getnumber(number) {
-    solutionscreen.textContent = number;
+function operate(operation) {
+    if (operation === "addition") {
+        let sum = firstnum + secondnum
+        return sum;
+    }
+    else if (operation === "subtraction") {
+        
+    }
 }
 
-function add(firstnum, currentnum) {
+function add() {
+    operate("addition")
     solutionscreen.textContent = "+";
-    let sum = firstnum + currentnum;
-    return sum;
 }
 
 function subtract(firstnum, currentnum) {
@@ -55,33 +61,17 @@ function percentage(firstnum) {
     return result;
 }
 
-const percentbtn = document.querySelector(".percentage").addEventListener("click", () => {operate("percentage")});
-const dividebtn = document.querySelector(".divide").addEventListener("click", () => {operate("division")});
-const multiplybtn = document.querySelector(".multiply").addEventListener("click", () => {operate("multiplication")});
-const subtractbtn = document.querySelector(".subtract").addEventListener("click", () => {operate("subtraction")});
-const addbtn = document.querySelector(".add").addEventListener("click", () => {operate("addition")});
+const percentbtn = document.querySelector(".percentage").addEventListener("click", percentage);
+const dividebtn = document.querySelector(".divide").addEventListener("click", divide);
+const multiplybtn = document.querySelector(".multiply").addEventListener("click", multiply);
+const subtractbtn = document.querySelector(".subtract").addEventListener("click", subtract);
+const addbtn = document.querySelector(".add").addEventListener("click", add);
+const equalbtn = document.querySelector(".equal").addEventListener("click", operate);
 
-function operate(operation) {
-    switch (operation) {
-        case "addition":
-            add;
-            break;
-        case "subtraction":
-            subtract;
-            break;
-        case "multiplication":
-            multiply;
-            break;
-        case "division":
-            divide;
-            break;
-        case "percentage":
-            percentage;
-            break;
-    }
-}
+
 const clearbtn = document.querySelector(".clear").addEventListener("click", clear);
 
 function clear() {
     window.location.reload();
 }
+
