@@ -39,8 +39,8 @@ function divide() {
 }
 
 function percentage() {
+    operate("percentage");
     solutionscreen.textContent = "%";
-    
 }
 
 function operate() {
