@@ -28,7 +28,16 @@ function percentage(firstnum) {
     return result;
 }
 
+function backspace() {
+
+}
+
 function operate(operation) {
+    const percentbtn = document.querySelector(".percentage").addEventListener("click", () => {operate("percentage")});
+    const dividebtn = document.querySelector(".divide").addEventListener("click", () => {operate("division")});
+    const multiplybtn = document.querySelector(".multiply").addEventListener("click", () => {operate("multiplication")});
+    const subtractbtn = document.querySelector(".subtract").addEventListener("click", () => {operate("subtraction")});
+    const addbtn = document.querySelector(".add").addEventListener("click", () => {operate("addition")});
     switch (operation) {
         case "addition":
             add;

@@ -65,7 +65,7 @@ button {
 }
 
 button:active {
-    box-shadow: 5px 5px 20px #344E41;
+    box-shadow: 3px 3px 20px #344E41;
 }
 
 a {
