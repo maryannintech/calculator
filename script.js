@@ -17,48 +17,62 @@ const ninebtn = document.querySelector(".nine").addEventListener("click", () => 
 const zerobtn = document.querySelector(".zero").addEventListener("click", () => {getnumber(0);});
 const pointbtn = document.querySelector(".point").addEventListener("click", () => {getnumber(".");});
 
-function operate(operation) {
-    if (operation === "addition") {
-        let sum = firstnum + secondnum
-        return sum;
-    }
-    else if (operation === "subtraction") {
-        
-    }
-}
-
 function add() {
-    operate("addition")
+    operation = "addition";
     solutionscreen.textContent = "+";
 }
 
-function subtract(firstnum, currentnum) {
+function subtract() {
+    operation = "subtraction";
     solutionscreen.textContent = "-";
-    let difference = firstnum - currentnum;
-    return difference;
 }
 
-function multiply(firstnum, currentnum) {
+function multiply() {
+    operation = "multiplication";
     solutionscreen.textContent = "x";
-    let product = firstnum * currentnum;
-    return product;
 }
 
-function divide(firstnum, currentnum) {
+function divide() {
+    operation = "division";
     solutionscreen.textContent = "÷";
-    if (firstnum === 0 || currentnum === 0) {
-        answerscreen.textContent = "Cannot be divide by 0";
+    
+}
+
+function percentage() {
+    solutionscreen.textContent = "%";
+    
+}
+
+function operate() {
+    if (operation === "addition") {
+        let sum = firstnum + secondnum;
+        
     }
-    else {
-        let quotient = firstnum / currentnum;
-        return quotient;
+    else if (operation === "subtraction") {
+        let difference = firstnum - secondnum;
+        answerscreen.textContent = difference;
+    }
+    else if (operation === "multiplication") {
+        let product = firstnum * secondnum;
+        answerscreen.textContent = product;
+    }
+    else if (operation === "division") {
+        if (firstnum === 0 || secondnum === 0) {
+            answerscreen.textContent = "Cannot be divide by 0";
+        }
+        else {
+            let quotient = firstnum / secondnum;
+            answerscreen.textContent = quotient;
+        }
+    }
+    else if (operation === "percentage") {
+        let result = firstnum / 100;
+        answerscreen.textContent = result;
     }
 }
 
-function percentage(firstnum) {
-    solutionscreen.textContent = "%";
-    let result = firstnum / 100;
-    return result;
+function clear() {
+    window.location.reload();
 }
 
 const percentbtn = document.querySelector(".percentage").addEventListener("click", percentage);
@@ -66,12 +80,10 @@ const dividebtn = document.querySelector(".divide").addEventListener("click", di
 const multiplybtn = document.querySelector(".multiply").addEventListener("click", multiply);
 const subtractbtn = document.querySelector(".subtract").addEventListener("click", subtract);
 const addbtn = document.querySelector(".add").addEventListener("click", add);
-const equalbtn = document.querySelector(".equal").addEventListener("click", operate);
 
+const equalbtn = document.querySelector(".equal").addEventListener("click", operate);
 
 const clearbtn = document.querySelector(".clear").addEventListener("click", clear);
 
-function clear() {
-    window.location.reload();
-}
+
 
