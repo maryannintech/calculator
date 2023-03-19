@@ -13,7 +13,7 @@ const sevenbtn = document.querySelector(".seven").addEventListener("click", () =
 const eigthbtn = document.querySelector(".eight").addEventListener("click", () => {getnumber(8);});
 const ninebtn = document.querySelector(".nine").addEventListener("click", () => {getnumber(9);});
 const zerobtn = document.querySelector(".zero").addEventListener("click", () => {getnumber(0);});
-const doublezerobtn = document.querySelector(".doublezero").addEventListener("click", () => {getnumber(00);});
+const pointbtn = document.querySelector(".point").addEventListener("click", () => {getnumber(".");});
 
 function getnumber(number) {
     solutionscreen.textContent = number;
