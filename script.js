@@ -10,28 +10,28 @@ const numberBtns = document.querySelectorAll('[num]');
 function add() {
     operation = "addition";
     solutionScreen.textContent = "+";
-}
+};
 
 function subtract() {
     operation = "subtraction";
     solutionScreen.textContent = "-";
-}
+};
 
 function multiply() {
     operation = "multiplication";
     solutionScreen.textContent = "x";
-}
+};
 
 function divide() {
     operation = "division";
     solutionScreen.textContent = "÷";
     
-}
+};
 
 function percentage() {
     operate("percentage");
     solutionScreen.textContent = "%";
-}
+};
 
 function operate() {
     let x = parseFloat(firstnum);
@@ -59,11 +59,11 @@ function operate() {
     }
 
     answerScreen.textContent = toString(answer);
-}
+};
 
 function clear() {
     window.location.reload();
-}
+};
 
 const percentbtn = document.querySelector(".percentage").addEventListener("click", percentage);
 const dividebtn = document.querySelector(".divide").addEventListener("click", divide);
