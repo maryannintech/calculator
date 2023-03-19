@@ -45,29 +45,25 @@ function percentage() {
 
 function operate() {
     if (operation === "addition") {
-        let sum = firstnum + secondnum;
+        answerscreen.textContent = firstnum + secondnum;
         
     }
     else if (operation === "subtraction") {
-        let difference = firstnum - secondnum;
-        answerscreen.textContent = difference;
+        answerscreen.textContent = firstnum - secondnum;
     }
     else if (operation === "multiplication") {
-        let product = firstnum * secondnum;
-        answerscreen.textContent = product;
+        answerscreen.textContent = firstnum * secondnum;
     }
     else if (operation === "division") {
         if (firstnum === 0 || secondnum === 0) {
             answerscreen.textContent = "Cannot be divide by 0";
         }
         else {
-            let quotient = firstnum / secondnum;
-            answerscreen.textContent = quotient;
+            answerscreen = firstnum / secondnum;
         }
     }
     else if (operation === "percentage") {
-        let result = firstnum / 100;
-        answerscreen.textContent = result;
+        answerscreen.textContent = firstnum / 100;
     }
 }
 
