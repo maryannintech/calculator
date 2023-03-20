@@ -62,6 +62,10 @@ body {
     background-color: #adc178;
 }
 
+.clear {
+    width: 115px;
+}
+
 .equal{
     width: 180px;
 }
