@@ -88,13 +88,13 @@ let addBtn = document.querySelector(".add").addEventListener("click", add);
 addBtn = document.querySelector(".add").addEventListener("click", () => {displayOperator("+");});
 addBtn = document.querySelector(".add").addEventListener("click", opClicked);
 let subtractBtn = document.querySelector(".subtract").addEventListener("click", subtract);
-subtractBtn = document.querySelector(".subtract").addEventListener("click", () => {displayOperator("+");});
+subtractBtn = document.querySelector(".subtract").addEventListener("click", () => {displayOperator("-");});
 subtractBtn = document.querySelector(".subtract").addEventListener("click", opClicked);
 let multiplyBtn = document.querySelector(".multiply").addEventListener("click", multiply);
-multiplyBtn = document.querySelector(".multiply").addEventListener("click", () => {displayOperator("+");});
+multiplyBtn = document.querySelector(".multiply").addEventListener("click", () => {displayOperator("*");});
 multiplyBtn = document.querySelector(".multiply").addEventListener("click", opClicked);
 let divideBtn = document.querySelector(".divide").addEventListener("click", divide);
-divideBtn = document.querySelector(".divide").addEventListener("click", () => {displayOperator("+");});
+divideBtn = document.querySelector(".divide").addEventListener("click", () => {displayOperator("/");});
 divideBtn = document.querySelector(".divide").addEventListener("click", opClicked);
 
 function opClicked() {
