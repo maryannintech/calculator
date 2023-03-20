@@ -22,13 +22,11 @@ const zeroBtn = document.querySelector(".zero").addEventListener("click", () => 
 let pointBtn = document.querySelector(".point").addEventListener("click", () => {chooseBtn(".");});
 pointBtn = document.querySelector(".point").addEventListener("click", counter);
 const posneg = document.querySelector(".posneg").addEventListener("click", () => {chooseBtn("+/-");});
-
 let opebtns = document.querySelectorAll(".ope");
-
-
 
 // to display numbers on screen when clicked
 function chooseBtn(number) {
+    // to enable the operations and decimal point button when a number is clicked
     opebtns.forEach((btn) => {
         btn.disabled = false;
     })
