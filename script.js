@@ -26,6 +26,8 @@ let opebtns = document.querySelectorAll(".ope");
 
 // to display numbers on screen when clicked
 function chooseBtn(number) {
+    firstnum = number;
+    secondnum = number;
     // to enable the operations and decimal point button when a number is clicked
     opebtns.forEach((btn) => {
         btn.disabled = false;
@@ -127,27 +129,28 @@ function percentage() {
 function operate() {
     let x = parseFloat(firstnum);
     let y = parseFloat(secondnum);
-    let answer;
     if (operation === "addition") {
         answerScreen.textContent = x + y;
-
     }
     else if (operation === "subtraction") {
-        answerScreen.textContent = answer = x - y;
+        answerScreen.textContent = x - y;
     }
     else if (operation === "multiplication") {
-        answerScreen.textContent = answer = x * y;
+        answerScreen.textContent = x * y;
     }
     else if (operation === "division") {
         if (x === 0 || y === 0) {
             answerScreen.textContent = "Cannot be divide by 0";
         }
         else {
-            answer = x / y;
+            answerScreen.textContent = x / y;
         }
     }
     else if (operation === "percentage") {
         answerScreen.textContent = firstnum / 100;
+    }
+    else {
+        
     }
 
 };
