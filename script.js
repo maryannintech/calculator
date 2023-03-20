@@ -21,7 +21,6 @@ function buttonClick(number){
 }
 
 // OPERATORS FUNCTIONS
-
 function add(x, y) {
     operation = "+";
     result = Number(x) + Number(y);
