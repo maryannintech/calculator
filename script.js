@@ -15,11 +15,6 @@ function buttonClick(number){
     })
     solutionScreen.textContent += number;
     num1 = number;
-    return number;
-}
-
-function buttonClickTwo(number2){
-    num2 = number2;
 }
 
 // OPERATORS FUNCTIONS
