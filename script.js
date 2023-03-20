@@ -1,8 +1,13 @@
-let num1
-let num2;
+let num1;
 let operation;
 let clicked = false;
 
+
+function buttonClick(number){
+    solutionScreen.textContent += number;
+    num1 += number;
+    return number;
+}
 
 // OPERATORS FUNCTIONS
 
@@ -35,22 +40,56 @@ function divide(x, y) {
     }
 }
 
+function operate() {
+    let num2 = buttonClick;
+    switch (operation) {
+        case "+":
+        add(num1, num2);
+        break;
+        case "-":
+        subtract(num1, num2);
+        break;
+        case "*":
+        multiply(num1, num2);
+        break;
+        case "/":
+        divide(num1, num2);
+        break;
+    }
+}
+
 // OPERATORS
-const addBtn = document.querySelector(".add").addEventListener("click", add);
-const subtractBtn = document.querySelector(".subtract").addEventListener("click", subtract);
-const multiplyBtn = document.querySelector(".multiply").addEventListener("click", multiply);
-const divideBtn = document.querySelector(".divide").addEventListener("click", divide);
+let addBtn = document.querySelector(".add").addEventListener("click", add);
+addBtn = document.querySelector(".add").addEventListener("click", opClicked);
+let subtractBtn = document.querySelector(".subtract").addEventListener("click", subtract);
+subtractBtn = document.querySelector(".subtract").addEventListener("click", opClicked);
+let multiplyBtn = document.querySelector(".multiply").addEventListener("click", multiply);
+multiplyBtn = document.querySelector(".multiply").addEventListener("click", opClicked);
+let divideBtn = document.querySelector(".divide").addEventListener("click", divide);
+divideBtn = document.querySelector(".divide").addEventListener("click", opClicked);
+
+function opClicked() {
+    clicked = true;
+    if (clicked === true) {
+        this.disabled = true;
+    }
+    else {
+        this.disabled = false;
+    }
+    
+}
 
 // NUMBERS
-const oneBtn = document.querySelector(".one");
-const twoBtn = document.querySelector(".two");
-const threeBtn = document.querySelector(".three");
-const fourBtn = document.querySelector(".four");
-const fiveBtn = document.querySelector(".five");
-const sixBtn = document.querySelector(".six");
-const sevenBtn = document.querySelector(".seven");
-const eightBtn = document.querySelector(".eight");
-const nineBtn = document.querySelector(".nine");
+const oneBtn = document.querySelector(".one").addEventListener("click", () => {buttonClick(1)});
+const twoBtn = document.querySelector(".two").addEventListener("click", () => {buttonClick(2)});
+const threeBtn = document.querySelector(".three").addEventListener("click", () => {buttonClick(3)});
+const fourBtn = document.querySelector(".four").addEventListener("click", () => {buttonClick(4)});
+const fiveBtn = document.querySelector(".five").addEventListener("click", () => {buttonClick(5)});
+const sixBtn = document.querySelector(".six").addEventListener("click", () => {buttonClick(6)});
+const sevenBtn = document.querySelector(".seven").addEventListener("click", () => {buttonClick(7)});
+const eightBtn = document.querySelector(".eight").addEventListener("click", () => {buttonClick(8)});
+const nineBtn = document.querySelector(".nine").addEventListener("click", () => {buttonClick(9)});
+const zeroBtn = document.querySelector(".zero").addEventListener("click", () => {buttonClick(0)});
 
 // SCREEN
 const solutionScreen = document.querySelector(".solution");
@@ -59,6 +98,7 @@ const answerScreen = document.querySelector(".answer");
 // OTHER TOOLS
 const clearBtn = document.querySelector(".clear").addEventListener("click", clear);
 const deleteBtn = document.querySelector(".delete").addEventListener("click", backspaceClick);
+const equalBtn = document.querySelector(".equal").addEventListener("click", operate);
 
 function clear() {
     window.location.reload();
