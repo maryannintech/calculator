@@ -156,7 +156,7 @@ function operate() {
 
 };
 
-// to only limit user of clicking once of any operator and decimal
+// to only limit user of clicking any operator and decimal
 function numofClick() {
     clicked = true;
     if (clicked === true) {
