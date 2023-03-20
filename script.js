@@ -77,6 +77,7 @@ function chooseBtn(num) {
         case "+/-":
             clicked = false;
             displayTextContent("-");
+            num * -1;
             break;
         case ".":
             displayTextContent(".")
@@ -150,7 +151,7 @@ function operate() {
         answerScreen.innerText = Number(x) / 100;
     }
     else {
-        answerScreen.innerText = ""
+        return;
     }
 
 };
@@ -172,7 +173,13 @@ function displayTextContent(content) {
 }
 
 function backspace() {
-    
+    if (solutionScreen.textContent.length === 1) {
+        solutionScreen.textContent = solutionScreen.textContent.slice(0, -1);
+        solutionScreen.textContent = "0";
+    }
+    else if (solutionScreen.textContent.length > 1) {
+        solutionScreen.textContent = solutionScreen.textContent.slice(0, -1);
+    }
 }
 
 function clear() {
