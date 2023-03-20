@@ -82,7 +82,6 @@ function displayOperator(op) {
 }
 
 // OPERATORS 
-
 let opeBtns = document.querySelectorAll(".ope");
 let addBtn = document.querySelector(".add").addEventListener("click", add);
 addBtn = document.querySelector(".add").addEventListener("click", () => {displayOperator("+");});
@@ -97,6 +96,7 @@ let divideBtn = document.querySelector(".divide").addEventListener("click", divi
 divideBtn = document.querySelector(".divide").addEventListener("click", () => {displayOperator("/");});
 divideBtn = document.querySelector(".divide").addEventListener("click", opClicked);
 
+// to prevent user clicking the operators repeatedly
 function opClicked() {
     clicked = true;
     if (clicked === true) {
