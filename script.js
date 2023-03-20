@@ -1,7 +1,6 @@
-let firstnum = "";
-let secondnum = "";
+let firstnum;
+let secondnum;
 let operation = ""; 
-let currentnum = "";
 let clicked = false;
 
 
@@ -27,8 +26,6 @@ let opebtns = document.querySelectorAll(".ope");
 
 // to display numbers on screen when clicked
 function chooseBtn(num) {
-    firstnum = Number(num);
-    secondnum = Number(num);
     // to enable the operations and decimal point button when a number is clicked
     opebtns.forEach((btn) => {
         btn.disabled = false;
@@ -82,6 +79,8 @@ function chooseBtn(num) {
         case ".":
             displayTextContent(".")
             break;
+        default:
+            return;
     }
 }
 
@@ -156,7 +155,7 @@ function operate() {
 
 };
 
-// to only limit user of clicking any operator and decimal
+// to limit user clicking once of any operation and decimal point
 function numofClick() {
     clicked = true;
     if (clicked === true) {
@@ -177,7 +176,7 @@ function backspace() {
     // if deleting only one number
     if (solutionScreen.textContent.length === 1) {
         solutionScreen.textContent = solutionScreen.textContent.slice(0, -1);
-        solutionScreen.textContent = "0";
+        solutionScreen.textContent = "";
     }
     // if deleting only more number
     else if (solutionScreen.textContent.length > 1) {
