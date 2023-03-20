@@ -21,8 +21,8 @@ const eigthBtn = document.querySelector(".eight").addEventListener("click", () =
 const nineBtn = document.querySelector(".nine").addEventListener("click", () => {chooseBtn(9);});
 const zeroBtn = document.querySelector(".zero").addEventListener("click", () => {chooseBtn(0);});
 let pointBtn = document.querySelector(".point").addEventListener("click", () => {chooseBtn(".");});
-pointBtn = document.querySelector(".point").addEventListener("click", counter);
-const posneg = document.querySelector(".posneg").addEventListener("click", () => {chooseBtn("+/-");});
+pointBtn = document.querySelector(".point").addEventListener("click", numofClick);
+let posneg = document.querySelector(".posneg").addEventListener("click", () => {chooseBtn("+/-");});
 let opebtns = document.querySelectorAll(".ope");
 
 // to display numbers on screen when clicked
@@ -96,15 +96,15 @@ function chooseBtn(number) {
 
 // operation buttons and eventlisteners
 let percentBtn = document.querySelector(".percentage").addEventListener("click", percentage);
-percentBtn = document.querySelector(".percentage").addEventListener("click", counter);
+percentBtn = document.querySelector(".percentage").addEventListener("click", numofClick);
 let divideBtn = document.querySelector(".divide").addEventListener("click", divide);
-divideBtn = document.querySelector(".divide").addEventListener("click", counter);
+divideBtn = document.querySelector(".divide").addEventListener("click", numofClick);
 let multiplyBtn = document.querySelector(".multiply").addEventListener("click", multiply);
-multiplyBtn = document.querySelector(".multiply").addEventListener("click", counter);
+multiplyBtn = document.querySelector(".multiply").addEventListener("click", numofClick);
 let subtractBtn = document.querySelector(".subtract").addEventListener("click", subtract);
-subtractBtn = document.querySelector(".subtract").addEventListener("click", counter);
+subtractBtn = document.querySelector(".subtract").addEventListener("click", numofClick);
 let addBtn = document.querySelector(".add").addEventListener("click", add);
-addBtn = document.querySelector(".add").addEventListener("click", counter);
+addBtn = document.querySelector(".add").addEventListener("click", numofClick);
 
 // tools buttons and eventlisteners
 const equalBtn = document.querySelector(".equal").addEventListener("click", operate);
@@ -167,7 +167,7 @@ function operate() {
 };
 
 // to only limit user of clicking once of any operator and decimal
-function counter() {
+function numofClick() {
     clicked = true;
     if (clicked === true) {
         this.disabled = true;
