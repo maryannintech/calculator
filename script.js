@@ -4,21 +4,25 @@ let operation;
 let clicked = false;
 
 function add(x, y) {
+    operation = "+";
     let result = Number(x) + Number(y);
     return result;
 }
 
 function subtract(x, y) {
+    operation = "-";
     let result = Number(x) - Number(y);
     return result;
 }
 
 function multiply(x, y) {
+    operation = "*";
     let result = Number(x) * Number(y);
     return result;
 }
 
 function divide(x, y) {
+    operation = "/";
     if (x === 0 || y === 0) {
         prompt("Cannot be divide by zero");
     }
@@ -28,52 +32,14 @@ function divide(x, y) {
     }
 }
 
+const addBtn = document.querySelector(".add").addEventListener("click", add);
+const subtractBtn = document.querySelector(".subtract").addEventListener("click", subtract);
+const multiplyBtn = document.querySelector(".multiply").addEventListener("click", multiply);
+const divideBtn = document.querySelectorAll(".divide").addEventListener("click", divide);
+
 const solutionScreen = document.querySelector(".solution");
 const answerScreen = document.querySelectorAll(".answer");
 
-const numBtns = document.querySelectorAll(".num");
-numBtns.forEach((btn) => {
-    btn.addEventListener("click", e => {
-        if (operation === "") {
-            num1 += e.target.textContent;
-            console.log(num1);
-        }
-        else {
-            num2 += e.target.textContent;
-            console.log(num2);
-        }
-    });
-});
-
-const opeBtns = document.querySelectorAll(".ope");
-opeBtns.forEach((opBtn) => {
-    opBtn.addEventListener("click", e => {
-        if (e.target.textContent !== "=") {
-            operation = e.target.textContent;
-            console.log(num1);
-            console.log(operation);
-        }
-        else {
-            console.log(num2);
-            switch (operation) {
-                case "+":
-                    add(num1, num2);
-                    break;
-                case "-":
-                    subtract(num1, num2);
-                    break;
-                case "*":
-                    multiply(num1, num2);
-                    break;
-                case "/":
-                    divide(num1, num2);
-                    break;
-                default:
-                    return;
-            }
-        }
-    })
-});
 const clearBtn = document.querySelector(".clear").addEventListener("click", clear);
 const deleteBtn = document.querySelector(".delete").addEventListener("click", backspaceClick);
 
