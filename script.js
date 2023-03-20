@@ -10,16 +10,8 @@ const solutionScreen = document.querySelector(".solution");
 const answerScreen = document.querySelector(".answer");
 
 function buttonClick(number){
-    if (num1 === undefined) {
-        num1 = number;
-    } else if (num2 === undefined) {
-        num2 = number;
-    }
-    else {
-        return;
-    }
-     // to enable the operations and decimal point button when a number is clicked
-     opeBtns.forEach((btn) => {
+    // to enable the operations and decimal point button when a number is clicked
+    opeBtns.forEach((btn) => {
         btn.disabled = false;
     })
     solutionScreen.textContent += number;
