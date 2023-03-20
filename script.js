@@ -3,14 +3,21 @@ let num2;
 let operation;
 let result;
 let clicked = false;
+let isNum1 = true;
 
 // SCREEN
 const solutionScreen = document.querySelector(".solution");
 const answerScreen = document.querySelector(".answer");
 
 function buttonClick(number){
-    num1 = number;
-    num2 = 2;
+    if (num1 === undefined) {
+        num1 = number;
+    } else if (num2 === undefined) {
+        num2 = number;
+    }
+    else {
+        return;
+    }
      // to enable the operations and decimal point button when a number is clicked
      opeBtns.forEach((btn) => {
         btn.disabled = false;
