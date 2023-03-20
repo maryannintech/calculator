@@ -23,43 +23,62 @@ let pointBtn = document.querySelector(".point").addEventListener("click", () => 
 pointBtn = document.querySelector(".point").addEventListener("click", counter);
 const posneg = document.querySelector(".posneg").addEventListener("click", () => {chooseBtn("+/-");});
 
+let opebtns = document.querySelectorAll(".ope");
+
+
 
 // to display numbers on screen when clicked
 function chooseBtn(number) {
-    clicked = false;
+    opebtns.forEach((btn) => {
+        btn.disabled = false;
+    })
     switch(number){
         case 1:
+            clicked = false;
             displayTextContent("1");
             break;
         case 2:
+            clicked = false;
             displayTextContent("2");
             break;
         case 3:
+            clicked = false;
             displayTextContent("3");
             break;
         case 4:
+            clicked = false;
             displayTextContent("4");
             break;
         case 5:
+            clicked = false;
             displayTextContent("5");
             break;
         case 6:
+            clicked = false;
             displayTextContent("6");
             break;
         case 7:
+            clicked = false;
             displayTextContent("7");
             break;
         case 8:
+            clicked = false;
             displayTextContent("8");
             break;
         case 9:
+            clicked = false;
             displayTextContent("9");
             break;
         case 0:
+            clicked = false;
             displayTextContent("0");
             break;
         case "+/-":
+            clicked = false;
             displayTextContent("-");
+            break;
+        case ".":
+            displayTextContent(".")
             break;
     }
 }
