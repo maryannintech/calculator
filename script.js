@@ -172,13 +172,19 @@ function displayTextContent(content) {
     solutionScreen.textContent += content;
 }
 
+// backspace function
 function backspace() {
+    // if deleting only one number
     if (solutionScreen.textContent.length === 1) {
         solutionScreen.textContent = solutionScreen.textContent.slice(0, -1);
         solutionScreen.textContent = "0";
     }
+    // if deleting only more number
     else if (solutionScreen.textContent.length > 1) {
         solutionScreen.textContent = solutionScreen.textContent.slice(0, -1);
+    }
+    else {
+        return;
     }
 }
 
