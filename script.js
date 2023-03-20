@@ -2,6 +2,7 @@ let firstnum = "";
 let secondnum = "";
 let operation = ""; 
 
+
 // dom variables
 let solutionScreen = document.querySelector(".solution");
 let answerScreen = document.querySelector(".answer");
@@ -59,7 +60,8 @@ function chooseBtn(number) {
 }
 
 // operation buttons
-const percentBtn = document.querySelector(".percentage").addEventListener("click", percentage);
+let percentBtn = document.querySelector(".percentage").addEventListener("click", percentage);
+percentBtn = document.querySelector(".percentage").addEventListener("click", counter);
 const divideBtn = document.querySelector(".divide").addEventListener("click", divide);
 const multiplyBtn = document.querySelector(".multiply").addEventListener("click", multiply);
 const subtractBtn = document.querySelector(".subtract").addEventListener("click", subtract);
@@ -123,6 +125,19 @@ function operate() {
     }
 
 };
+
+// to only limit user of clicking once of any operator and decimal
+let numClicked = 1;
+function counter() {
+    ++numClicked;
+    if (numClicked > 1) {
+        this.disabled = true;
+    }
+    else {
+        this.disabled = false;
+    }
+    
+}
 
 function displayTextContent(content) {
     solutionScreen.textContent += content;
