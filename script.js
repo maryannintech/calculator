@@ -14,8 +14,12 @@ function buttonClick(number){
         btn.disabled = false;
     })
     solutionScreen.textContent += number;
-    num1 += number;
+    num1 = number;
     return number;
+}
+
+function buttonClickTwo(number2){
+    num2 = number2;
 }
 
 // OPERATORS FUNCTIONS
@@ -93,7 +97,7 @@ let divideBtn = document.querySelector(".divide").addEventListener("click", divi
 divideBtn = document.querySelector(".divide").addEventListener("click", () => {displayOperator("/");});
 divideBtn = document.querySelector(".divide").addEventListener("click", opClicked);
 
-// to prevent user clicking the operators repeatedly
+// to prevent user from clicking the operators repeatedly
 function opClicked() {
     clicked = true;
     if (clicked === true) {
