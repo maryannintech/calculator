@@ -1,13 +1,14 @@
 let firstnum = "";
 let secondnum = "";
 let operation = ""; 
+let clicked = false;
 
 
 // dom variables
 let solutionScreen = document.querySelector(".solution");
 let answerScreen = document.querySelector(".answer");
 
-// number buttons
+// number buttons and eventlisteners
 const oneBtn = document.querySelector(".one").addEventListener("click", () => {chooseBtn(1);});
 const twoBtn = document.querySelector(".two").addEventListener("click", () => {chooseBtn(2);});
 const threeBtn = document.querySelector(".three").addEventListener("click", () => {chooseBtn(3);});
@@ -18,10 +19,14 @@ const sevenBtn = document.querySelector(".seven").addEventListener("click", () =
 const eigthBtn = document.querySelector(".eight").addEventListener("click", () => {chooseBtn(8);});
 const nineBtn = document.querySelector(".nine").addEventListener("click", () => {chooseBtn(9);});
 const zeroBtn = document.querySelector(".zero").addEventListener("click", () => {chooseBtn(0);});
-const pointBtn = document.querySelector(".point").addEventListener("click", () => {chooseBtn(".");});
+let pointBtn = document.querySelector(".point").addEventListener("click", () => {chooseBtn(".");});
+pointBtn = document.querySelector(".point").addEventListener("click", counter);
 const posneg = document.querySelector(".posneg").addEventListener("click", () => {chooseBtn("+/-");});
 
+
+// to display numbers on screen when clicked
 function chooseBtn(number) {
+    clicked = false;
     switch(number){
         case 1:
             displayTextContent("1");
@@ -59,15 +64,19 @@ function chooseBtn(number) {
     }
 }
 
-// operation buttons
+// operation buttons and eventlisteners
 let percentBtn = document.querySelector(".percentage").addEventListener("click", percentage);
 percentBtn = document.querySelector(".percentage").addEventListener("click", counter);
-const divideBtn = document.querySelector(".divide").addEventListener("click", divide);
-const multiplyBtn = document.querySelector(".multiply").addEventListener("click", multiply);
-const subtractBtn = document.querySelector(".subtract").addEventListener("click", subtract);
-const addBtn = document.querySelector(".add").addEventListener("click", add);
+let divideBtn = document.querySelector(".divide").addEventListener("click", divide);
+divideBtn = document.querySelector(".divide").addEventListener("click", counter);
+let multiplyBtn = document.querySelector(".multiply").addEventListener("click", multiply);
+multiplyBtn = document.querySelector(".multiply").addEventListener("click", counter);
+let subtractBtn = document.querySelector(".subtract").addEventListener("click", subtract);
+subtractBtn = document.querySelector(".subtract").addEventListener("click", counter);
+let addBtn = document.querySelector(".add").addEventListener("click", add);
+addBtn = document.querySelector(".add").addEventListener("click", counter);
 
-// tools buttons
+// tools buttons and eventlisteners
 const equalBtn = document.querySelector(".equal").addEventListener("click", operate);
 const clearBtn = document.querySelector(".clear").addEventListener("click", clear);
 const deleteBtn = document.querySelector(".delete").addEventListener("click", backspace);
@@ -127,10 +136,9 @@ function operate() {
 };
 
 // to only limit user of clicking once of any operator and decimal
-let numClicked = 1;
 function counter() {
-    ++numClicked;
-    if (numClicked > 1) {
+    clicked = true;
+    if (clicked === true) {
         this.disabled = true;
     }
     else {
@@ -148,11 +156,7 @@ function backspace() {
 }
 
 function clear() {
-    solutionScreen.textContent = null;
-    answerScreen.textContent = null;
-    firstnum = "";
-    secondnum = "";
-    operation = "";
+    window.location.reload();
 };
 
 
