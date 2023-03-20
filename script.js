@@ -3,7 +3,6 @@ let num2;
 let operation;
 let result;
 let clicked = false;
-let isNum1 = true;
 
 // SCREEN
 const solutionScreen = document.querySelector(".solution");
