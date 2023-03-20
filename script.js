@@ -97,8 +97,7 @@ function chooseBtn(number) {
 // operation buttons and eventlisteners
 let percentBtn = document.querySelector(".percentage").addEventListener("click", percentage);
 percentBtn = document.querySelector(".percentage").addEventListener("click", numofClick);
-let divideBtn = document.querySelector(".divide").addEventListener("click", divide);
-divideBtn = document.querySelector(".divide").addEventListener("click", numofClick);
+let divideBtn = document.querySelector(".divide").addEventListener("click", divide, numofClick);
 let multiplyBtn = document.querySelector(".multiply").addEventListener("click", multiply);
 multiplyBtn = document.querySelector(".multiply").addEventListener("click", numofClick);
 let subtractBtn = document.querySelector(".subtract").addEventListener("click", subtract);
@@ -138,30 +137,30 @@ function percentage() {
 };
 
 function operate() {
-    let x = parseFloat(firstnum);
-    let y = parseFloat(secondnum);
+    let x = firstnum;
+    let y = secondnum;
     if (operation === "addition") {
-        answerScreen.textContent = x + y;
+        answerScreen.innerText = Number(x) + Number(y);
     }
     else if (operation === "subtraction") {
-        answerScreen.textContent = x - y;
+        answerScreen.innerText = Number(x) - Number(y);
     }
     else if (operation === "multiplication") {
-        answerScreen.textContent = x * y;
+        answerScreen.innerText = Number(x) * Number(y);
     }
     else if (operation === "division") {
         if (x === 0 || y === 0) {
-            answerScreen.textContent = "Cannot be divide by 0";
+            answerScreen.innerText = "Cannot be divide by 0";
         }
         else {
-            answerScreen.textContent = x / y;
+            answerScreen.innerText = Number(x) / Number(y);
         }
     }
     else if (operation === "percentage") {
-        answerScreen.textContent = firstnum / 100;
+        answerScreen.innerText = Number(x) / 100;
     }
     else {
-        
+        answerScreen.innerText = ""
     }
 
 };
