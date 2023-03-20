@@ -26,63 +26,53 @@ let posneg = document.querySelector(".posneg").addEventListener("click", () => {
 let opebtns = document.querySelectorAll(".ope");
 
 // to display numbers on screen when clicked
-function chooseBtn(number) {
-    firstnum = number;
-    secondnum = number;
+function chooseBtn(num) {
+    firstnum = Number(num);
+    secondnum = Number(num);
     // to enable the operations and decimal point button when a number is clicked
     opebtns.forEach((btn) => {
         btn.disabled = false;
     })
-    switch(number){
+    switch(num){
         case 1:
             clicked = false;
             displayTextContent("1");
-            parseFloat("1");
             break;
         case 2:
             clicked = false;
             displayTextContent("2");
-            parseFloat("2");
             break;
         case 3:
             clicked = false;
             displayTextContent("3");
-            parseFloat("3");
             break;
         case 4:
             clicked = false;
             displayTextContent("4");
-            parseFloat("4");
             break;
         case 5:
             clicked = false;
             displayTextContent("5");
-            parseFloat("5");
             break;
         case 6:
             clicked = false;
             displayTextContent("6");
-            parseFloat("6");
             break;
         case 7:
             clicked = false;
             displayTextContent("7");
-            parseFloat("7");
             break;
         case 8:
             clicked = false;
             displayTextContent("8");
-            parseFloat("8");
             break;
         case 9:
             clicked = false;
             displayTextContent("9");
-            parseFloat("9");
             break;
         case 0:
             clicked = false;
             displayTextContent("0");
-            parseFloat("0");
             break;
         case "+/-":
             clicked = false;
