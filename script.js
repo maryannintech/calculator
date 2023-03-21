@@ -14,7 +14,6 @@ function buttonClick(number){
     })
     solutionScreen.textContent += number;
     firstNum = number;
-    secondNum  = number;
 }
 
 // OPERATORS FUNCTIONS
@@ -46,9 +45,9 @@ function divide(x, y) {
 }
 
 function operate(op) {
+    op = operation;
     let num1 = Number(firstNum);
     let num2 = Number(secondNum);
-    op = operation;
     switch (op) {
         case "+":
             displayAnswer(add(num1, num2));
