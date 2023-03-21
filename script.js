@@ -23,7 +23,9 @@ function buttonClick(number){
         btn.disabled = false;
     })
     solutionScreen.textContent += number;
-
+    opeBtns.forEach((btn) => {
+        btn. disabled = false;
+    })
 }
 
 // OPERATORS FUNCTIONS
@@ -94,6 +96,8 @@ function displayOperator(ope) {
 let opeBtns = document.querySelectorAll(".ope");
 opeBtns.forEach((btn) => {
     btn.addEventListener("click", opClicked);
+    // disabling the operations and equal buttons first if user doesn't enter a number
+    btn. disabled = true;
 })
 let addBtn = document.querySelector(".add").addEventListener("click", add);
 addBtn = document.querySelector(".add").addEventListener("click", () => {displayOperator("+");});
