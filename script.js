@@ -13,9 +13,11 @@ function buttonClick(number){
         btn.disabled = false;
     })
     solutionScreen.textContent += number;
+    // assign first number
     if (operation === "") {
         firstNum += number;
     }
+    // assign second number
     else {
         secondNum += number;
     }
@@ -70,9 +72,12 @@ function operate(op) {
             return;
     }
     firstNum = Number(answerScreen.textContent);
+    solutionScreen.textContent = firstNum;
     operation = "";
     secondNum = "";
-    solutionScreen.textContent = answerScreen.textContent;
+    numBts.forEach((numBtn) => {
+        numBtn.disabled = true;
+    })
 }
 
 function displayAnswer(content) {
@@ -110,6 +115,7 @@ function opClicked() {
 }
 
 // NUMBERS
+let numBts = document.querySelectorAll(".num");
 const oneBtn = document.querySelector(".one").addEventListener("click", () => {buttonClick(1)});
 const twoBtn = document.querySelector(".two").addEventListener("click", () => {buttonClick(2)});
 const threeBtn = document.querySelector(".three").addEventListener("click", () => {buttonClick(3)});
