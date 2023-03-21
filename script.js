@@ -69,7 +69,9 @@ function operate(op) {
         default:
             return;
     }
-    solutionScreen.textContent = "";
+    firstNum = Number(answerScreen.textContent);
+    secondNum = "";
+    solutionScreen.textContent = answerScreen.textContent;
 }
 
 function displayAnswer(content) {
