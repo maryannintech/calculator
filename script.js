@@ -129,7 +129,3 @@ function backspaceClick() {
         return;
     }
 }
-
-
-
-
