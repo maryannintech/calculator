@@ -1,5 +1,5 @@
-let num1;
-let num2;
+let firstNum;
+let secondNum;
 let operation;
 let result;
 let clicked = false;
@@ -14,7 +14,7 @@ function buttonClick(number){
         btn.disabled = false;
     })
     solutionScreen.textContent += number;
-    num1 = number;
+    firstNum = number;
 }
 
 // OPERATORS FUNCTIONS
@@ -48,8 +48,10 @@ function divide(x, y) {
     }
 }
 
-function operate() {
-    switch (operation) {
+function operate(num1, num2, op) {
+    firstNum = num1;
+    secondNum = num2;
+    switch (op) {
         case "+":
         add(num1, num2);
         populateDisplay(result);
@@ -73,8 +75,8 @@ function populateDisplay(content) {
     answerScreen.textContent = content;
 }
 
-function displayOperator(op) {
-    solutionScreen.textContent += op;
+function displayOperator(ope) {
+    solutionScreen.textContent += ope;
 }
 
 // OPERATORS 
