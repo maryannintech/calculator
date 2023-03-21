@@ -9,12 +9,6 @@ const solutionScreen = document.querySelector(".solution");
 const answerScreen = document.querySelector(".answer");
 
 function buttonClick(number){
-    // to enable the operations and decimal point button when a number is clicked
-    opeBtns.forEach((btn) => {
-        btn.disabled = false;
-    })
-    solutionScreen.textContent += number;
-
     // assign first number
     if (operation === "") {
         firstNum += number;
@@ -23,6 +17,13 @@ function buttonClick(number){
     else {
         secondNum += number;
     }
+
+    // to enable the operations and decimal point button when a number is clicked
+    opeBtns.forEach((btn) => {
+        btn.disabled = false;
+    })
+    solutionScreen.textContent += number;
+
 }
 
 // OPERATORS FUNCTIONS
