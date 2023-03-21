@@ -75,9 +75,6 @@ function operate(op) {
     solutionScreen.textContent = firstNum;
     operation = "";
     secondNum = "";
-    numBts.forEach((numBtn) => {
-        numBtn.disabled = true;
-    })
 }
 
 function displayAnswer(content) {
