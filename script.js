@@ -21,7 +21,6 @@ function buttonClick(number){
     // assign second number
     else {
         secondNum += number;
-        solutionScreen.textContent = `${firstNum}${operation}${secondNum}`;
     }
 }
 
