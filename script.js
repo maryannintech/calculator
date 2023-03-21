@@ -1,5 +1,5 @@
-let firstNum = 4;
-let secondNum = 1;
+let firstNum;
+let secondNum;
 let operation;
 let clicked = false;
 
