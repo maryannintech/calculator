@@ -35,7 +35,7 @@ function divide(x, y) {
     operation = "/";
     if (x === 0 || y === 0) {
         let errorsign = "Cannot be divide by 0."
-        return errorsign
+        return errorsign;
     }
     else {
         let result = Math.floor(Number(x) / Number(y));
@@ -46,17 +46,19 @@ function divide(x, y) {
 function operate(num1, num2, op) {
     switch (op) {
         case "+":
-        displayAnswer(add(num1, num2));
-        break;
+            displayAnswer(add(num1, num2));
+            break;
         case "-":
-        displayAnswer(subtract(num1, num2));
-        break;
+            displayAnswer(subtract(num1, num2));
+            break;
         case "*":
-        displayAnswer(multiply(num1, num2));
-        break;
+            displayAnswer(multiply(num1, num2));
+            break;
         case "/":
-        displayAnswer(divide(num1, num2));
-        break;
+            displayAnswer(divide(num1, num2));
+            break;
+        default:
+            return;
     }
 }
 
