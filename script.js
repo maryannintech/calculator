@@ -8,7 +8,6 @@ const solutionScreen = document.querySelector(".solution");
 const answerScreen = document.querySelector(".answer");
 
 function buttonClick(number){
-    firstNum = number;
     // to enable the operations and decimal point button when a number is clicked
     opeBtns.forEach((btn) => {
         btn.disabled = false;
@@ -47,6 +46,7 @@ function divide(x, y) {
 function operate(op) {
     let num1 = Number(firstNum);
     let num2 = Number(secondNum);
+    op = operation;
     switch (op) {
         case "+":
             displayAnswer(add(num1, num2));
@@ -63,6 +63,7 @@ function operate(op) {
         default:
             return;
     }
+    solutionScreen.textContent = "";
 }
 
 function displayAnswer(content) {
@@ -134,5 +135,3 @@ function backspaceClick() {
         return;
     }
 }
-
-console.log(operation);
