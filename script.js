@@ -13,6 +13,8 @@ function buttonClick(number){
         btn.disabled = false;
     })
     solutionScreen.textContent += number;
+    firstNum = number;
+    secondNum  = number;
 }
 
 // OPERATORS FUNCTIONS
