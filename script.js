@@ -1,7 +1,6 @@
-let firstNum;
-let secondNum;
+let firstNum = 4;
+let secondNum = 1;
 let operation;
-let result;
 let clicked = false;
 
 // SCREEN
@@ -9,7 +8,6 @@ const solutionScreen = document.querySelector(".solution");
 const answerScreen = document.querySelector(".answer");
 
 function buttonClick(number){
-    firstNum = number;
     // to enable the operations and decimal point button when a number is clicked
     opeBtns.forEach((btn) => {
         btn.disabled = false;
@@ -20,48 +18,47 @@ function buttonClick(number){
 // OPERATORS FUNCTIONS
 function add(x, y) {
     operation = "+";
-    result = Number(x) + Number(y);
+    return result = Number(x) + Number(y);
 }
 
 function subtract(x, y) {
     operation = "-";
-    result = Number(x) - Number(y);
+    return result = Number(x) - Number(y);
 }
 
 function multiply(x, y) {
     operation = "*";
-    result = Number(x) * Number(y);
+    return result = Number(x) * Number(y);
 }
 
 function divide(x, y) {
     operation = "/";
     if (x === 0 || y === 0) {
         let errorsign = "Cannot be divide by 0."
+        return errorsign
     }
     else {
         let result = Math.floor(Number(x) / Number(y));
-        result.toFixed(4);
+        return result.toFixed(4);
     }
 }
 
 function operate(num1, num2, op) {
-    
+    firstNum = num1;
+    secondNum = num2;
+    operation = op;
     switch (op) {
         case "+":
-        add(num1, num2);
-        populateDisplay(result);
+        populateDisplay(add(num1, num2));
         break;
         case "-":
-        subtract(num1, num2);
-        populateDisplay(result);
+        populateDisplay(subtract(num1, num2));
         break;
         case "*":
-        multiply(num1, num2);
-        populateDisplay(result);
+        populateDisplay(multiply(num1, num2));
         break;
         case "/":
-        divide(num1, num2);
-        populateDisplay(result);
+        populateDisplay(divide(num1, num2));
         break;
     }
 }
