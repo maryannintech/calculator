@@ -74,6 +74,7 @@ function operate(op) {
         default:
             return;
     }
+    // assign the result to the first number
     firstNum = Number(answerScreen.textContent);
     solutionScreen.textContent = firstNum;
     operation = "";
