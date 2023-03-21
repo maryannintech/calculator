@@ -9,48 +9,43 @@ const solutionScreen = document.querySelector(".solution");
 const answerScreen = document.querySelector(".answer");
 
 function buttonClick(number){
+    firstNum = number;
     // to enable the operations and decimal point button when a number is clicked
     opeBtns.forEach((btn) => {
         btn.disabled = false;
     })
     solutionScreen.textContent += number;
-    firstNum = number;
 }
 
 // OPERATORS FUNCTIONS
 function add(x, y) {
     operation = "+";
     result = Number(x) + Number(y);
-    return result;
 }
 
 function subtract(x, y) {
     operation = "-";
     result = Number(x) - Number(y);
-    return result
 }
 
 function multiply(x, y) {
     operation = "*";
     result = Number(x) * Number(y);
-    return result
 }
 
 function divide(x, y) {
     operation = "/";
     if (x === 0 || y === 0) {
         let errorsign = "Cannot be divide by 0."
-        return errorsign;
     }
     else {
         let result = Math.floor(Number(x) / Number(y));
-        return result.toFixed(4);
+        result.toFixed(4);
     }
 }
 
 function operate(num1, num2, op) {
-    firstNum = num1;
-    secondNum = num2;
+    
     switch (op) {
         case "+":
         add(num1, num2);
