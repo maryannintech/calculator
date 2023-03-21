@@ -44,9 +44,6 @@ function divide(x, y) {
 }
 
 function operate(num1, num2, op) {
-    firstNum = num1;
-    secondNum = num2;
-    operation = op;
     switch (op) {
         case "+":
         populateDisplay(add(num1, num2));
