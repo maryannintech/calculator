@@ -2,6 +2,7 @@ let firstNum = "";
 let secondNum = "";
 let operation = "";
 let clicked = false;
+let isEquals = false;
 
 // SCREEN
 const solutionScreen = document.querySelector(".solution");
@@ -21,9 +22,6 @@ function buttonClick(number){
     else {
         secondNum += number;
         solutionScreen.textContent = `${firstNum}${operation}${secondNum}`;
-        numBts.forEach((numBtn) => {
-            numBtn.disabled = true;
-        })
     }
 }
 
@@ -59,6 +57,7 @@ function operate(op) {
     op = operation;
     let num1 = Number(firstNum);
     let num2 = Number(secondNum);
+    isEquals = true;
     switch (op) {
         case "+":
             displayAnswer(add(num1, num2));
@@ -79,9 +78,6 @@ function operate(op) {
     solutionScreen.textContent = firstNum;
     operation = "";
     secondNum = "";
-    numBts.forEach((numBtn) => {
-        numBtn.disabled = false;
-    })
 }
 
 function displayAnswer(content) {
