@@ -14,6 +14,7 @@ function buttonClick(number){
         btn.disabled = false;
     })
     solutionScreen.textContent += number;
+
     // assign first number
     if (operation === "") {
         firstNum += number;
@@ -47,8 +48,8 @@ function divide(x, y) {
         return errorsign;
     }
     else {
-        let result = Math.floor(Number(x) / Number(y));
-        return Math.floor(result);
+        let result = Number(x) / Number(y);
+        return result;
     }
 }
 

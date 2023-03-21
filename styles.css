@@ -37,7 +37,8 @@ body {
     margin-top: 20px;
 }
 
-.solution {
+.solution,
+.answer {
     overflow: auto; 
 }
 
