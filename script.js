@@ -2,7 +2,6 @@ let firstNum = "";
 let secondNum = "";
 let operation = "";
 let clicked = false;
-let isEquals = false;
 
 // SCREEN
 const solutionScreen = document.querySelector(".solution");
