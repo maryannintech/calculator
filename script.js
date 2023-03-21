@@ -2,6 +2,7 @@ let firstNum = "";
 let secondNum = "";
 let operation = "";
 let clicked = false;
+let isOperation = false;
 
 // SCREEN
 const solutionScreen = document.querySelector(".solution");
@@ -22,9 +23,6 @@ function buttonClick(number){
         btn.disabled = false;
     })
     solutionScreen.textContent += number;
-    opeBtns.forEach((btn) => {
-        btn. disabled = false;
-    })
 }
 
 // OPERATORS FUNCTIONS
