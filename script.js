@@ -70,6 +70,7 @@ function operate(op) {
             return;
     }
     firstNum = Number(answerScreen.textContent);
+    operation = "";
     secondNum = "";
     solutionScreen.textContent = answerScreen.textContent;
 }
