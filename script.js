@@ -46,21 +46,21 @@ function divide(x, y) {
 function operate(num1, num2, op) {
     switch (op) {
         case "+":
-        populateDisplay(add(num1, num2));
+        displayAnswer(add(num1, num2));
         break;
         case "-":
-        populateDisplay(subtract(num1, num2));
+        displayAnswer(subtract(num1, num2));
         break;
         case "*":
-        populateDisplay(multiply(num1, num2));
+        displayAnswer(multiply(num1, num2));
         break;
         case "/":
-        populateDisplay(divide(num1, num2));
+        displayAnswer(divide(num1, num2));
         break;
     }
 }
 
-function populateDisplay(content) {
+function displayAnswer(content) {
     answerScreen.textContent = content;
 }
 
