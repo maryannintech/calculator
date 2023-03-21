@@ -45,7 +45,7 @@ function divide(x, y) {
     }
     else {
         let result = Math.floor(Number(x) / Number(y));
-        return result.toFixed(4);
+        return Math.floor(result);
     }
 }
 
@@ -135,7 +135,7 @@ function backspaceClick() {
         solutionScreen.textContent = solutionScreen.textContent.slice(0, -1);
         solutionScreen.textContent = "";
     }
-    // if deleting more numberS
+    // if deleting more numbers
     else if (solutionScreen.textContent.length > 1) {
         solutionScreen.textContent = solutionScreen.textContent.slice(0, -1);
     }
