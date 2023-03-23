@@ -109,7 +109,10 @@ divideBtn = document.querySelector(".divide").addEventListener("click", () => {d
 function opClicked() {
     clicked = true;
     if (clicked === true) {
-        this.disabled = true;
+        opeBtns.forEach((btn) => {
+            btn.addEventListener("click", opClicked);
+            btn. disabled = true;
+        })
     }
     else {
         this.disabled = false;
