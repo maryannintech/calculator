@@ -132,24 +132,8 @@ const zeroBtn = document.querySelector(".zero").addEventListener("click", () => 
 
 // OTHER TOOLS
 const clearBtn = document.querySelector(".clear").addEventListener("click", clear);
-const deleteBtn = document.querySelector(".delete").addEventListener("click", backspaceClick);
 const equalBtn = document.querySelector(".equal").addEventListener("click", operate);
 
 function clear() {
     window.location.reload();
-}
-
-function backspaceClick() {
-     // if deleting only one number
-     if (solutionScreen.textContent.length === 1) {
-        solutionScreen.textContent = solutionScreen.textContent.slice(0, -1);
-        solutionScreen.textContent = "";
-    }
-    // if deleting more numbers
-    else if (solutionScreen.textContent.length > 1) {
-        solutionScreen.textContent = solutionScreen.textContent.slice(0, -1);
-    }
-    else {
-        return;
-    }
 }
