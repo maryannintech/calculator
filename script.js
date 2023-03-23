@@ -56,8 +56,10 @@ function operate(op) {
     op = operation;
     let num1 = Number(firstNum);
     let num2 = Number(secondNum);
+    // checking if user click the equal button before clicking a number
     if (firstNum === "" && secondNum === "") {
-        answerScreen.textContent = "Choose a number first!"
+        answerScreen.textContent = "";
+        solutionScreen.textContent = "0";
     } 
     else {
         switch (op) {
