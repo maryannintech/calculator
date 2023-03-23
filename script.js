@@ -48,7 +48,7 @@ function divide(x, y) {
     }
     else {
         let result = Number(x) / Number(y);
-        return result;
+        return result.toFixed(4);
     }
 }
 
