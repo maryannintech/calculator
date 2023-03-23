@@ -56,22 +56,26 @@ function operate(op) {
     op = operation;
     let num1 = Number(firstNum);
     let num2 = Number(secondNum);
-    isEquals = true;
-    switch (op) {
-        case "+":
-            displayAnswer(add(num1, num2));
-            break;
-        case "-":
-            displayAnswer(subtract(num1, num2));
-            break;
-        case "*":
-            displayAnswer(multiply(num1, num2));
-            break;
-        case "/":
-            displayAnswer(divide(num1, num2));
-            break;
-        default:
-            return;
+    if (firstNum === "" && secondNum === "") {
+        answerScreen.textContent = "Choose a number first!"
+    } 
+    else {
+        switch (op) {
+            case "+":
+                displayAnswer(add(num1, num2));
+                break;
+            case "-":
+                displayAnswer(subtract(num1, num2));
+                break;
+            case "*":
+                displayAnswer(multiply(num1, num2));
+                break;
+            case "/":
+                displayAnswer(divide(num1, num2));
+                break;
+            default:
+                return;
+        }
     }
     // assign the result to the first number
     firstNum = Number(answerScreen.textContent);
@@ -134,7 +138,7 @@ const zeroBtn = document.querySelector(".zero").addEventListener("click", () => 
 
 // OTHER TOOLS
 const clearBtn = document.querySelector(".clear").addEventListener("click", clear);
-const equalBtn = document.querySelector(".equal").addEventListener("click", operate);
+let equalBtn = document.querySelector(".equal").addEventListener("click", operate);
 
 function clear() {
     window.location.reload();
