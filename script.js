@@ -87,6 +87,9 @@ function operate(op) {
     solutionScreen.textContent = firstNum;
     operation = "";
     secondNum = "";
+    opeBtns.forEach((btn) => {
+        btn.disabled = false;
+    })
 }
 
 function displayAnswer(content) {
