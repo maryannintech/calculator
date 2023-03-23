@@ -11,16 +11,19 @@ function buttonClick(number){
     // assign first number
     if (operation === "") {
         firstNum += number;
+        opeBtns.forEach((btn) => {
+            btn.disabled = false;
+        })
     }
     // assign second number
     else {
         secondNum += number;
+        opeBtns.forEach((btn) => {
+            btn.disabled = true;
+        })
     }
 
     // to enable the operations and decimal point button when a number is clicked
-    opeBtns.forEach((btn) => {
-        btn.disabled = false;
-    })
     solutionScreen.textContent += number;
 }
 
