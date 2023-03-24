@@ -46,11 +46,11 @@ function multiply(x, y) {
 function divide(x, y) {
     operation = "/";
     if (x === 0 || y === 0) {
-        numBtns.forEach((btn) => {
-            btn.disabled = true;
+        allBtns.forEach((btns) => {
+            btns.disabled = true;
         });
 
-        let errorsign = "Cannot be divide by 0. Try again"
+        let errorsign = "Cannot be divide by 0"
         return errorsign;
     }
     else {
@@ -136,7 +136,7 @@ function opClicked() {
 }
 
 // NUMBERS
-let numBtns = document.querySelectorAll(".num");
+let allBtns = document.querySelectorAll(".btn");
 const oneBtn = document.querySelector(".one").addEventListener("click", () => {buttonClick(1)});
 const twoBtn = document.querySelector(".two").addEventListener("click", () => {buttonClick(2)});
 const threeBtn = document.querySelector(".three").addEventListener("click", () => {buttonClick(3)});
